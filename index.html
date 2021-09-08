@@ -204,6 +204,7 @@
 
       var script = document.createElement("script");
       script.src = loaderUrl;
+      var gameInstance = null;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           {
@@ -213,6 +214,7 @@
             document.getElementById("progressBar").style.display = "inherit";
           }
         }).then((unityInstance) => {
+          gameInstance = unityInstance;
           document.getElementById("loadingBox").style.display = "none";
           // document.getElementById("icon").style.display = "none";
           document.getElementById("loadingInfo").style.display = "none";

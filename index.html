@@ -205,7 +205,7 @@
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
+         var gameInstance = createUnityInstance(canvas, config, (progress) => {
           {
             document.getElementById("progressBar").style.width = 420 * progress + "px"
             document.getElementById("loadingInfo").innerHTML = "Please wait while your content is loading: " + Math.round(progress * 100) + "%";
